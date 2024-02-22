@@ -72,7 +72,7 @@ export async function mintPowToken(wallet: Wallet) {
       toAddress,
       noteNote,
       payNotes,
-      feeRate,
+      30,
     );
     const txHash256 = hash256(tx.txHex);
     console.log("checking", txHash256, locktime);
@@ -86,7 +86,7 @@ export async function mintPowToken(wallet: Wallet) {
         toAddress = undefined;
         noteNote = undefined;
         payNotes = undefined;
-        feeRate = undefined;
+        //feeRate = undefined;
         return result;
       }
       break;
@@ -94,7 +94,7 @@ export async function mintPowToken(wallet: Wallet) {
       toAddress = tx.toAddress;
       noteNote = tx.noteUtxo;
       payNotes = tx.payUtxos;
-      feeRate = tx.feeRate;
+      //feeRate = tx.feeRate;
       locktime++;
     }
   }
